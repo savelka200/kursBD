@@ -1,0 +1,12 @@
+C:\Users\savel\source\repos\kursBDf\kursBDf\bin\Debug\Database1.mdf
+C:\Users\savel\source\repos\kursBDf\kursBDf\bin\Debug\Database1_log.ldf
+C:\Users\savel\source\repos\kursBDf\kursBDf\bin\Debug\kursBDf.exe.config
+C:\Users\savel\source\repos\kursBDf\kursBDf\bin\Debug\kursBDf.exe
+C:\Users\savel\source\repos\kursBDf\kursBDf\bin\Debug\kursBDf.pdb
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.csproj.AssemblyReference.cache
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.Form1.resources
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.Properties.Resources.resources
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.csproj.GenerateResource.cache
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.csproj.CoreCompileInputs.cache
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.exe
+C:\Users\savel\source\repos\kursBDf\kursBDf\obj\Debug\kursBDf.pdb
