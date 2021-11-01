@@ -13,7 +13,7 @@ namespace kursBDf
 {
     public partial class Form1 : Form
     {
-        SqlConnection sqlConnection; // обьявляю соединение, пока пустое
+        SqlConnection sqlConnection; // обьявляю соединение, чтобы к нему можно было добраться из любой точки
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,13 @@ namespace kursBDf
         }
 
         private async void Form1_Load(object sender, EventArgs e)
-        {// обьявляю строку в которой путь к базе данных, его я взял из обозревателя серверов -> свойства базы -> строка подключения
+        {
+            textBox4.Hide();
+            label5.Hide();
+            dateTimePicker1.Hide();
+            comboBox3.Hide();
+            button2.Hide();
+            // обьявляю строку в которой путь к базе данных, его я взял из обозревателя серверов -> свойства базы -> строка подключения
             string connstr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\savel\source\repos\kursBDf\kursBDf\Database1.mdf;Integrated Security=True";
             sqlConnection = new SqlConnection(connstr); //задал путь подключеня
 
@@ -55,12 +61,14 @@ namespace kursBDf
             listBox1.Items.Clear();
             listBox2.Items.Clear(); // прадвариетльно очищаю списки
             listBox3.Items.Clear();
+            listBox4.Items.Clear();
+
             SqlDataReader reader = null; // обьявляю считыватель
 
             SqlCommand command1 = new SqlCommand("SELECT * FROM [runs]", sqlConnection); // обьявляю комманду
 
             reader = await command1.ExecuteReaderAsync(); // выполняю комманду и записываю в ридер
-            while (reader.Read()) listBox1.Items.Add(reader["dist"] + " км      " + reader["date"]); // по циклу записываю по одной записи
+            while (reader.Read()) listBox1.Items.Add(reader["id"] + "   " + reader["dist"] + " км      " + reader["date"]); // по циклу записываю по одной записи
             reader.Close(); // закрываю ридер чтоб потом открыть снова, ругается
             // повторяю
             SqlCommand command2 = new SqlCommand("SELECT * FROM [runsinfo]", sqlConnection);
@@ -73,7 +81,13 @@ namespace kursBDf
             SqlCommand command3 = new SqlCommand("SELECT * FROM [blag]", sqlConnection);
             
             reader = await command3.ExecuteReaderAsync();
-            while (reader.Read()) listBox3.Items.Add(reader["name"]);
+            while (reader.Read()) listBox3.Items.Add(reader ["id"] +"   " +reader["name"]);
+            reader.Close();
+
+            SqlCommand command4 = new SqlCommand("SELECT * FROM [runners]", sqlConnection);
+            listBox4.Items.Add("Подтв" + "          " + "ID" + "          " + "Имя"); // заголовки 
+            reader = await command4.ExecuteReaderAsync();
+            while (reader.Read()) listBox4.Items.Add(reader["verify"] + "          " + reader["id"] + "          " + reader["name"]);
             reader.Close();
 
         }
@@ -139,6 +153,26 @@ namespace kursBDf
                 }
                 else MessageBox.Show("Поля должны быть заполнены, подтверждение пароля должно совпадать", "Ошибка", MessageBoxButtons.OK); // если чтото не так то выскакивет это
 
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox2.SelectedIndex == 0)
+            {
+                textBox4.Hide(); // скрываю и показываю нужные вещи для добавления зебега
+                label5.Hide();
+                dateTimePicker1.Show();
+                comboBox3.Show();
+                button2.Show();
+            }
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                textBox4.Show(); // скрываю и показываю нужные вещи для добавления организации
+                label5.Show();
+                dateTimePicker1.Hide();
+                comboBox3.Hide();
+                button2.Show();
             }
         }
     }
