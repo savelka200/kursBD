@@ -57,6 +57,8 @@ namespace kursBDf
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -68,8 +70,12 @@ namespace kursBDf
             this.label4 = new System.Windows.Forms.Label();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.обнвитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -81,6 +87,7 @@ namespace kursBDf
             this.tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,6 +112,8 @@ namespace kursBDf
             // 
             // инструментыToolStripMenuItem
             // 
+            this.инструментыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.обнвитьToolStripMenuItem});
             this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
             this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.инструментыToolStripMenuItem.Text = "Инструменты";
@@ -309,7 +318,7 @@ namespace kursBDf
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(900, 345);
+            this.tabPage2.Size = new System.Drawing.Size(900, 347);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Информация о забегах";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -331,7 +340,7 @@ namespace kursBDf
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(900, 345);
+            this.tabPage3.Size = new System.Drawing.Size(900, 347);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Результаты забегов";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -353,7 +362,7 @@ namespace kursBDf
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(900, 345);
+            this.tabPage4.Size = new System.Drawing.Size(900, 347);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Благотврительные организации";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -371,6 +380,7 @@ namespace kursBDf
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.groupBox5);
             this.tabPage5.Controls.Add(this.groupBox4);
             this.tabPage5.Controls.Add(this.groupBox3);
             this.tabPage5.Controls.Add(this.listBox4);
@@ -397,6 +407,22 @@ namespace kursBDf
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Добавление записи";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(175, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Название";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(7, 54);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(161, 22);
+            this.textBox4.TabIndex = 6;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm";
@@ -408,6 +434,7 @@ namespace kursBDf
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "5",
@@ -426,14 +453,16 @@ namespace kursBDf
             this.button2.TabIndex = 4;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Забег",
             "Благотворительная организация"});
-            this.comboBox2.Location = new System.Drawing.Point(6, 21);
+            this.comboBox2.Location = new System.Drawing.Point(7, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(302, 24);
             this.comboBox2.TabIndex = 4;
@@ -460,6 +489,7 @@ namespace kursBDf
             this.button4.TabIndex = 3;
             this.button4.Text = "Подтвердить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -469,6 +499,7 @@ namespace kursBDf
             this.button3.TabIndex = 2;
             this.button3.Text = "Отказать";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
@@ -502,26 +533,70 @@ namespace kursBDf
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(900, 345);
+            this.tabPage6.Size = new System.Drawing.Size(900, 347);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Личный кабинет";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // обнвитьToolStripMenuItem
             // 
-            this.textBox4.Location = new System.Drawing.Point(7, 54);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(161, 22);
-            this.textBox4.TabIndex = 6;
+            this.обнвитьToolStripMenuItem.Name = "обнвитьToolStripMenuItem";
+            this.обнвитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.обнвитьToolStripMenuItem.Text = "Обновить";
+            this.обнвитьToolStripMenuItem.Click += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // label5
+            // groupBox5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(175, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Название";
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Location = new System.Drawing.Point(9, 182);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(308, 157);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Удаление записи";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Забег",
+            "Результат забега",
+            "Благотворительную организацию",
+            "Бегуна"});
+            this.comboBox4.Location = new System.Drawing.Point(7, 22);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(295, 24);
+            this.comboBox4.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 17);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "ID";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(34, 53);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 2;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(140, 53);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(161, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Удалить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -553,6 +628,8 @@ namespace kursBDf
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +678,12 @@ namespace kursBDf
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem обнвитьToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }
 
