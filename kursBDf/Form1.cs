@@ -48,10 +48,11 @@ namespace kursBDf
             comboBox3.Hide();
             button2.Hide();
             // обьявляю строку в которой путь к базе данных, его я взял из обозревателя серверов -> свойства базы -> строка подключения
-            string connstr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\savel\source\repos\kursBDf\kursBDf\Database1.mdf;Integrated Security=True";
+            // upd: я немного изменил путь, теперь он относительный благодаря |DataDirectory|, теперь будет работать и на других компах
+            string connstr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|Database1.mdf';Integrated Security=True";
             sqlConnection = new SqlConnection(connstr); //задал путь подключеня
 
-            sqlConnection.Open(); //открываю соединение асинхронно, чтоб ничего не тормозило (наверное)
+            sqlConnection.Open(); //открываю соединение 
             tabControl1.TabPages.Remove(tabPage5); // при создании формы скрываю управление и личный кабинет
             tabControl1.TabPages.Remove(tabPage6);
         }
